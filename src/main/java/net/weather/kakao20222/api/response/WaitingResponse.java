@@ -1,0 +1,6 @@
+package net.weather.kakao20222.api.response;
+
+import java.util.List;
+
+public record WaitingResponse(List<MatchingUserResponse> waitingLine) {
+}
