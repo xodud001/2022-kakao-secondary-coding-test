@@ -6,16 +6,15 @@ import net.weather.kakao20222.api.request.StartRequest;
 import net.weather.kakao20222.api.response.*;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.List;
 
 public class GameApi {
 
     private final WebClient client;
 
-    public GameApi() {
+    public GameApi(String baseUrl, String authToken) {
         this.client = WebClient.builder()
-                .baseUrl("https://huqeyhi95c.execute-api.ap-northeast-2.amazonaws.com/prod")
-                .defaultHeader("X-Auth-Token", "3afcabcf0232e6a152273fa34ca69bcd")
+                .baseUrl(baseUrl)
+                .defaultHeader("X-Auth-Token", authToken)
                 .defaultHeader("Content-Type", "application/json")
                 .build();
     }
